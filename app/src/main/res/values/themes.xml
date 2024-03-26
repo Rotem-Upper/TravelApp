@@ -1,0 +1,20 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.TravelApp" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Customize your light theme here. -->
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#007AFF</item>
+        <item name="colorPrimaryVariant">#5AC8FA</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <!--Secondary brand color. -->
+        <item name="colorSecondary">#FF2D55</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <!--Background color. -->
+        <item name="colorBackgroundFloating">#F7F8FA</item>
+        <item name="colorOnBackground">#1E2432</item>
+
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Theme.TravelApp" parent="Base.Theme.TravelApp" />
+</resources>
