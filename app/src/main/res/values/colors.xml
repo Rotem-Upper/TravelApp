@@ -2,4 +2,8 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="facebookBlue">#3b5998</color>
+    <color name="googleButtonColor">#db4437</color>
+    <color name="loginButtonColor">#FF2D55</color>
+    <color name="signUpTextColor">#1E2432</color>
 </resources>
