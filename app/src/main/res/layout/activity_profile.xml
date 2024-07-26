@@ -7,7 +7,7 @@
     android:background="#ffffff"
     tools:context=".ProfileActivity">
 
-    <!-- Top Horizontal Layout for Back and Logout Buttons -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/topBar"
         android:layout_width="0dp"
@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Back Icon -->
+
         <ImageView
             android:id="@+id/ivBackIcon"
             android:layout_width="30dp"
@@ -28,7 +28,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!-- Logout Button -->
+
         <Button
             android:id="@+id/btnLogout"
             android:layout_width="wrap_content"
@@ -44,7 +44,7 @@
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <!-- Vertical Layout for Profile Details -->
+
     <LinearLayout
         android:id="@+id/profileDetailsLayout"
         android:layout_width="0dp"
@@ -55,7 +55,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <!-- Profile Image -->
+
         <ImageView
             android:id="@+id/ivProfileImage"
             android:layout_width="100dp"
@@ -63,10 +63,10 @@
             android:layout_gravity="center"
             android:layout_marginTop="32dp"
             android:layout_marginBottom="8dp"
-            android:src="@drawable/profile"
-            android:scaleType="centerCrop" />
+            android:scaleType="centerCrop"
+            android:src="@drawable/user" />
 
-        <!-- Upload Image Button -->
+
         <Button
             android:id="@+id/btnUploadImage"
             android:layout_width="wrap_content"
@@ -78,7 +78,7 @@
             android:textColor="@android:color/white"
             app:cornerRadius="8dp" />
 
-        <!-- Username Field -->
+
         <EditText
             android:id="@+id/etUsername"
             android:layout_width="match_parent"
@@ -90,7 +90,7 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <!-- Email Field -->
+
         <EditText
             android:id="@+id/etEmail"
             android:layout_width="match_parent"
@@ -102,7 +102,7 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <!-- Phone Field -->
+
         <EditText
             android:id="@+id/etPhone"
             android:layout_width="match_parent"
@@ -114,7 +114,7 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <!-- Gender Field -->
+
         <EditText
             android:id="@+id/etGender"
             android:layout_width="match_parent"
@@ -126,7 +126,7 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <!-- Date of Birth Field -->
+
         <EditText
             android:id="@+id/etDob"
             android:layout_width="match_parent"
@@ -138,7 +138,7 @@
             android:textColor="@android:color/black"
             android:textSize="16sp" />
 
-        <!-- Save Button -->
+
         <Button
             android:id="@+id/btnSaveProfile"
             android:layout_width="match_parent"

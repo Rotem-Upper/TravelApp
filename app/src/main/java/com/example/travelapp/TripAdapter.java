@@ -9,7 +9,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-import java.util.ArrayList;
 import java.util.List;
 
 public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder> {
@@ -17,19 +16,15 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
     private List<Trip> tripsList;
     private Context context;
 
-    // Constructor
-    public TripAdapter(Context context) {
+    public TripAdapter(Context context, List<Trip> tripsList) {
         this.context = context;
-        this.tripsList = new ArrayList<>();
-        // Initialize trips list with dummy data
-        tripsList.add(new Trip(R.drawable.imgtrip1, "Abu Dhabi", "Dubai"));
-        tripsList.add(new Trip(R.drawable.imgtrip2, "Turkey (Value Tour)", "Turkey"));
-        tripsList.add(new Trip(R.drawable.imgtrip1, "Abu Dhabi", "Dubai"));
-        tripsList.add(new Trip(R.drawable.imgtrip2, "Turkey (Value Tour)", "Turkey"));
-        tripsList.add(new Trip(R.drawable.imgtrip1, "Abu Dhabi", "Dubai"));
-        tripsList.add(new Trip(R.drawable.imgtrip2, "Turkey (Value Tour)", "Turkey"));
-        tripsList.add(new Trip(R.drawable.imgtrip1, "Abu Dhabi", "Dubai"));
-        tripsList.add(new Trip(R.drawable.imgtrip2, "Turkey (Value Tour)", "Turkey"));}
+        this.tripsList = tripsList;
+    }
+
+    public void updateTrips(List<Trip> tripsList) {
+        this.tripsList = tripsList;
+        notifyDataSetChanged();
+    }
 
     @NonNull
     @Override
@@ -49,7 +44,6 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
         return tripsList.size();
     }
 
-    // ViewHolder inner-class
     class TripViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         private final ImageView imageView;
         private final TextView nameView;
@@ -71,7 +65,17 @@ public class TripAdapter extends RecyclerView.Adapter<TripAdapter.TripViewHolder
 
         @Override
         public void onClick(View view) {
+            int position = getAdapterPosition();
+            Trip currentTrip = tripsList.get(position);
+
             Intent intent = new Intent(context, TripDetailsActivity.class);
+            intent.putExtra("tripImage", currentTrip.getImageResource());
+            intent.putExtra("tripName", currentTrip.getTripName());
+            intent.putExtra("tripLocation", currentTrip.getLocation());
+            intent.putExtra("tripDate", currentTrip.getDate());
+            intent.putExtra("tripPrice", currentTrip.getPrice());
+            intent.putExtra("tripDescription", currentTrip.getDescription());
+
             context.startActivity(intent);
         }
     }

@@ -25,6 +25,22 @@ public class TripDetailsActivity extends AppCompatActivity {
         tvTripDescription = findViewById(R.id.tvTripDescription);
         btnBookNow = findViewById(R.id.btnBookNow);
 
+        // Get data from intent
+        int tripImage = getIntent().getIntExtra("tripImage", R.drawable.applogo);
+        String tripName = getIntent().getStringExtra("tripName");
+        String tripLocation = getIntent().getStringExtra("tripLocation");
+        String tripDate = getIntent().getStringExtra("tripDate");
+        String tripPrice = getIntent().getStringExtra("tripPrice");
+        String tripDescription = getIntent().getStringExtra("tripDescription");
+
+        // Set data to views
+        ivTripImage.setImageResource(tripImage);
+        tvTripTitle.setText(tripName);
+        tvTripLocation.setText(tripLocation);
+        tvTripDate.setText(tripDate);
+        tvTripPrice.setText(tripPrice);
+        tvTripDescription.setText(tripDescription);
+
         ivBackIcon.setOnClickListener(view -> onBackPressed());
         btnBookNow.setOnClickListener(view -> {
             // Implement booking logic here
